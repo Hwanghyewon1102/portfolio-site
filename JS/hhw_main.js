@@ -9,7 +9,7 @@ moonImg.addEventListener('mouseover', function () {
   });
 });
 
-moonImg.addEventListener('mouseout', function () {
+moonImg.addEventListener('click', function () {
   visualImg.classList.remove('back-img');
   Description.forEach(function(description) {
   description.style.display = 'none';
