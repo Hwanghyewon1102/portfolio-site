@@ -33,16 +33,3 @@ const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
 
 
-const toTopEl = document.querySelector('#toTop')
-const visualInner = document.querySelector('.visual > .inner');
-
-window.addEventListener('scroll', () => {
-  
-  if (window.scrollY <= 500) {
-    visualInner.classList.add('moveBackground');
-    }else{
-      visualInner.classList.remove('moveBackground');
-
-    }
-  
-});

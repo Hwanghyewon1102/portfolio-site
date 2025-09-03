@@ -3,6 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 오픈 그래프 -->
+  <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
+  <!-- 
+    type: 사이트 타입(website로 고정하면 됨)
+    site_name: 웹사이트 이름, 브랜드 네임을 쓰면 좋음(ex. Goni's Portfolio, Goni.dev, MyPortfolio)
+    title: 현재 페이지의 제목
+    description: 간단한 소개(검색, 공유 시 미리보기에서 사용)
+    image: 썸네일 이미지(가장 중요함!), 절대 경로로 작성하는 것을 권장(https://부터 시작), 권장 크기(1200x630px 정도)
+    url: 현재 사이트의 대표 URL
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Goni's Portfolio" />
+  <meta property="og:title" content="Goni | Full Stack Developer" />
+  <meta property="og:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
+  <meta property="og:image" content="https://your-domain.com/images/thumbnail.png" />
+  <meta property="og:url" content="https://your-domain.com" />
+
+  <!-- 트위터 카드 -->
+  <!-- 웹페이지가 소셜미디어(트위터)로 공유될 때 우선적으로 활용되는 정보 -->
+  <!-- 
+    card: 카드 유형 지정
+      └summary: 작은 썸네일 + 텍스트 요약
+      └summary_large_image: 큰 썸네일 + 텍스트 요약
+  -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <!-- 계정 태그 노출용 작성자 트위터 계정(없으면 생략 가능) -->
+  <!-- <meta name="twitter:site" content="@your_twitter_handle" />
+  <meta name="twitter:creator" content="@your_twitter_handle" /> -->
+  <meta property="twitter:title" content="Goni | Full Stack Developer" />
+  <meta property="twitter:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
+  <meta property="twitter:image" content="https://your-domain.com/images/thumbnail.png" />
+  <meta property="twitter:url" content="https://your-domain.com" />
   
   <!-- 타이틀 변경 -->
   <title>Goni | Full Stack Developer</title>
@@ -21,17 +54,18 @@
   <!-- 구글 웹폰트: 경량화된 오픈 라이선스 폰트, 한글을 지원하는지 확인 및 필요한 굵기 선택 후 연결 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 
   <!-- 구글 머티리얼 아이콘 연결 -->
   <!-- 구글 머티리얼 아이콘: 구글에서 제공하는 머티리얼 스타일의 아이콘, 글자처럼 취급 가능한 장점 -->
   <!-- 그 외 fontawesome, bootstrap icon 등 -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
- 
+
   <!-- Swiper CSS -->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- main.css -->
   <link rel="stylesheet" href="css/main.css">
@@ -41,11 +75,14 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- ScrollMagic -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+    integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- main.js -->
   <script defer src="js/main.js"></script>
 </head>
+
 <body>
   <!-- 폰트 테스트 -->
   <!-- <span>헬로 월드!</span>
@@ -69,6 +106,12 @@
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
+
+      <!-- 햄버거 버튼 -->
+      <a href="javascript:void(0)" class="btn-hamburger">
+        <span class="material-symbols-outlined search-div">menu</span>
+    </div>
+    </a>
     </div>
   </header>
 
@@ -78,42 +121,42 @@
     <div class="inner">
       <h1 class="font-en">
         <span class="animate-flash" style="animation-delay: 0.04s;">반</span>
-          <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
-          <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
-          <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
-          &nbsp;
-          <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
-          <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
-          <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
-          <br>
-          <span class="animate-flash" style="animation-delay: 0.06s;">F</span>
-          <span class="animate-flash" style="animation-delay: 0.28s;">u</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">l</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">l</span>
-          &nbsp;
-          <span class="animate-flash" style="animation-delay: 0.02s;">S</span>
-          <span class="animate-flash" style="animation-delay: 0.22s;">t</span>
-          <span class="animate-flash" style="animation-delay: 0.17s;">a</span>
-          <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
-          <span class="animate-flash" style="animation-delay: 0.20s;">k</span>
-          &nbsp;
-          <span class="animate-flash purple" style="animation-delay: 0.11s;">D</span>
-          <span class="animate-flash purple" style="animation-delay: 0.18s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.05s;">v</span>
-          <span class="animate-flash purple" style="animation-delay: 0.06s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.09s;">l</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">o</span>
-          <span class="animate-flash purple" style="animation-delay: 0.28s;">p</span>
-          <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
-          <br>
-          <span class="animate-flash purple" style="animation-delay: 0.10s;">김</span>
-          <span class="animate-flash purple" style="animation-delay: 0.16s;">재</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">현</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
-          <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
-          <span class="animate-flash" style="animation-delay: 0.13s;">.</span>
+        <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
+        <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
+        <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
+        &nbsp;
+        <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
+        <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
+        <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
+        <br>
+        <span class="animate-flash" style="animation-delay: 0.06s;">F</span>
+        <span class="animate-flash" style="animation-delay: 0.28s;">u</span>
+        <span class="animate-flash" style="animation-delay: 0.12s;">l</span>
+        <span class="animate-flash" style="animation-delay: 0.15s;">l</span>
+        &nbsp;
+        <span class="animate-flash" style="animation-delay: 0.02s;">S</span>
+        <span class="animate-flash" style="animation-delay: 0.22s;">t</span>
+        <span class="animate-flash" style="animation-delay: 0.17s;">a</span>
+        <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
+        <span class="animate-flash" style="animation-delay: 0.20s;">k</span>
+        &nbsp;<br class="mobile-if" style="display: none;">
+        <span class="animate-flash purple" style="animation-delay: 0.11s;">D</span>
+        <span class="animate-flash purple" style="animation-delay: 0.18s;">e</span>
+        <span class="animate-flash purple" style="animation-delay: 0.05s;">v</span>
+        <span class="animate-flash purple" style="animation-delay: 0.06s;">e</span>
+        <span class="animate-flash purple" style="animation-delay: 0.09s;">l</span>
+        <span class="animate-flash purple" style="animation-delay: 0.24s;">o</span>
+        <span class="animate-flash purple" style="animation-delay: 0.28s;">p</span>
+        <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
+        <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
+        <br>
+        <span class="animate-flash purple" style="animation-delay: 0.10s;">김</span>
+        <span class="animate-flash purple" style="animation-delay: 0.16s;">재</span>
+        <span class="animate-flash purple" style="animation-delay: 0.24s;">현</span>
+        <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
+        <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
+        <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
+        <span class="animate-flash" style="animation-delay: 0.13s;">.</span>
       </h1>
     </div>
   </section>
@@ -125,7 +168,9 @@
       <div class="about__wrapper">
         <div class="about__img">
           <!-- 본인 프로필 이미지 넣기 -->
-          <img src="data:image/png;base64,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" alt="프로필">
+          <img
+            src="data:image/png;base64,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"
+            alt="프로필">
         </div>
         <div class="about__text">
           <!-- 본인 슬로건, 이름(생년월일), 학력 또는 교육 사항 등 작성 -->
@@ -154,11 +199,11 @@
       </div>
 
       <!-- 연락처 버튼 -->
-       <div class="about__btn font-en">
+      <div class="about__btn font-en">
         <a href="#contact">
           <img src="images/icon/icon_contact.png" alt="연락처">CONTACT
         </a>
-       </div>
+      </div>
     </div>
   </section>
 
@@ -217,28 +262,28 @@
     </div>
   </section>
 
- <!-- PROJECT -->
+  <!-- PROJECT -->
   <section id="project" class="project font-en">
     <div class="inner">
       <h2 class="title">PROJECT</h2>
       <div class="port">
         <div class="port__img">
           <!-- 슬라이드 -->
-           <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/work_1.jpg" alt="산출물1">
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/work_2.jpg" alt="산출물2">
-                </div>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/work_1.jpg" alt="산출물1">
               </div>
-
-              <div class="swiper-pagination"></div>
-
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div class="swiper-slide">
+                <img src="images/work_2.jpg" alt="산출물2">
+              </div>
             </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
         <div class="port__text">
           <h3>프로젝트명</h3>
@@ -250,28 +295,30 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal">README</a>
-            <a href="javascript:void(0)" class="btn btn--brown  btn-modal-image" data-image-src="images/work_1">이미지</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image"
+              data-image-src="images/work_1.jpg">이미지</a>
           </div>
         </div>
       </div>
+
       <div class="port">
         <div class="port__img">
           <!-- 슬라이드 -->
-           <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/work_3.jpg" alt="산출물3">
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/work_4.jpg" alt="산출물4">
-                </div>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/work_3.jpg" alt="산출물1">
               </div>
-
-              <div class="swiper-pagination"></div>
-
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div class="swiper-slide">
+                <img src="images/work_4.jpg" alt="산출물2">
+              </div>
             </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
         <div class="port__text">
           <h3>프로젝트명</h3>
@@ -283,12 +330,14 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal">README</a>
-            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_3">이미지</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image"
+              data-image-src="images/work_3.jpg">이미지</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- CONTACT -->
   <section id="contact" class="contact font-en scroll-spy">
@@ -321,13 +370,13 @@
   </section>
 
   <!-- FOOTER -->
-   <footer>
+  <footer>
     <div class="inner">
       <p class="copyright">
         &copy; <span class="this-year">Kim Jae Hyun. All Rights Reserved.</span>
       </p>
     </div>
-   </footer>
+  </footer>
 
 
 
@@ -335,7 +384,7 @@
 
   <!-- MODAL -->
   <!-- 모달 배경 -->
-   <div id="modal">
+  <div id="modal">
     <div class="modal-content">
       <div class="modal-header">
         README
@@ -345,29 +394,30 @@
         <p>여기에 모달 내용이 들어갑니다.</p>
       </div>
     </div>
-   </div>
+  </div>
 
   <!-- IMAGE MMODAL -->
   <!-- 모달 배경 -->
-    <div id="imageModal">
-      <!-- 모달 내용 -->
-      <div class="modal-content">
-        <div class="modal-header">
-          이미지
-          <span class="material-symbols-outlined btn-close">close</span>
-        </div>
-        <div class="modal-body">
-          <!-- 1픽셀 투명한 GIF -->
-          <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
-        </div>
+  <div id="imageModal">
+    <!-- 모달 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        이미지
+        <span class="material-symbols-outlined btn-close">close</span>
+      </div>
+      <div class="modal-body">
+        <!-- 1픽셀 투명한 GIF -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
       </div>
     </div>
+  </div>
 
-    <!-- SCROLL TO TOP -->
-     <div id="toTop">
-      <a href="#">
-        <span class="material-symbols-outlined">arrow_upward</span>
-      </a>
-     </div>
+  <!-- SCROLL TO TOP -->
+  <div id="toTop">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </div>
 </body>
+
 </html>
