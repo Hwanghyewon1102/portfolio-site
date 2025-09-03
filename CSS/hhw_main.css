@@ -18,6 +18,10 @@ body {
 
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 .font-en {
   font-family: "Open Sans", sans-serif;
 }
@@ -30,7 +34,7 @@ a {
 
 .inner {
 
-  max-width: 1200px;
+  max-width: 1600px;
 
   margin: 0 auto;
   
@@ -103,6 +107,19 @@ header .search .search-div{
   padding: 3%;
 
 }
+
+
+.visual-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: -1;
+}
+
 
 .visual > .inner {
   margin: auto;
@@ -197,21 +214,64 @@ header .search .search-div{
 /* ABOUT */
 .about {
   padding: 150px 0;
+  height: 100vh;
 }
 
-
-
-.about > .inner{
-  position: relative;
-}
 .about  .about__wrapper {
   display: flex;
-  justify-content: space-evenly;
+  column-gap: 200px;
+  margin-top: 100px;
+  transition: 1s;
 }
 
 .about .about__img img{
-  width: 350px;
+  width: 40vh;
+  height: 50vh;
+  margin-left: 100px;
+  animation: aboutimg 1s;
+
 }
+
+.about .about__text{
+  align-content: end;
+  line-height: 45px;
+  
+}
+
+.about .about__text .slogan{
+  font-size: 60px;
+  font-weight: 700;
+  display: block;
+  animation: abouttext 1s;
+}
+.about .about__text .data{
+  font-size: 25px;
+  padding-top: 10px;
+  animation: abouttext 1s;
+  animation-delay: 0.2s;
+}
+
+.about .about__text .career{
+  font-size: 20px;
+  animation: abouttext 1s;
+  animation-delay: 0.4s;
+}
+
+.about .about__text  ul{
+  animation: abouttext 1s;
+  animation-delay: 0.6s;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -227,10 +287,12 @@ header .search .search-div{
 
 .skill .inner{
   background-color: #fff;
-  padding: 1px 1px  4% 1px;
+  /* padding: 1px 1px  4% 1px; */
+  padding-bottom: 50px;
   border-radius: 0 0 20px 20px;
 
 }
+
 
 .skill__list {
   display: flex;
@@ -238,21 +300,116 @@ header .search .search-div{
   gap: 20px;
   justify-content: center;
   text-align: center;
+
 }
 
 .skill__box {
   width: 40%;
-  height: 20vh;
+  height: 250px;
   border: 1px solid #c8c8c8;
   border-radius: 20px;
+  position: relative;
+}
 
+.skill__box span{
+  font-weight: 700;
+  font-size: 30px;
+  
+}
+
+.skill .inner img{
+  width: 20vh;
+  margin-left: 50px;
+  border-radius: 10px;
+  position: absolute;
+
+}
+
+.skill .inner ul{
+  line-height: 50px;
+  margin-left: -100px;
 }
 
 
 
+
+
+
 /* PROJECT */
-.project{
+
+.project {
   padding: 150px 0;
+}
+.project .port {
+  display: flex;
+  margin: 20px 0;
+}
+
+.project .port .port__img,
+.project .port .port__text {
+  width: 50%;
+  height: 300px;
+}
+.project .port .port__img .swiper {
+  width: 100%;
+  height: 100%;
+}
+.project .port .port__img .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* object-fit: cover; */
+}
+.project .port .port__text {
+  padding: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.project .port .port__text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.project .port .port__text li {
+  line-height: 1.8;
+}
+.project .port .port__text li span {
+  font-weight: bold;
+}
+.project .port .btn-group {
+  display: flex;
+  /* column-gap: 40px; */
+}
+/* 또는 */
+.project .port .btn-group .btn:first-child {
+  margin-right: 40px;
+}
+.project .subport {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.project .subport img{
+  width: calc(25% - 40px);
+  margin: 20px;
+}
+.project .subport img:hover{
+  cursor: pointer;
+}
+
+
+.port.num2{
+  display: none;
+}
+
+.port.num3{
+  display: none;
+}
+
+.port.num4{
+  display: none;
 }
 
 
@@ -260,10 +417,56 @@ header .search .search-div{
 .contact{
   padding: 150px 0;
   background-color: #0078C8;
+  height: 100vh;
 }
 .contact .inner{
   background-color: #fff;
+  height: 100%;
+  padding-bottom: 30px;
+  border-radius: 0 0 20px 20px;
+  
 }
+
+.contact .info{
+  justify-content: space-around;
+  align-content: center;display: flex;
+
+}
+.contact .info-name::after{
+  content: " ";
+  width: 1px;
+  height: 50px;
+  color: #0078C8;
+  margin: 0 auto;
+}
+
+
+.projectimg{
+  position: fixed;
+  bottom: 20%;
+  right: 200px;
+  border: 2px solid #0078C8;
+  opacity: 0.5;
+}
+
+.projectimg img:hover{
+  opacity: 1;
+}
+
+.projectimg img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.projectimg li{
+  padding: 20px;
+}
+
+
+
+
+
+
 
 
 
@@ -324,10 +527,16 @@ footer .copyright{
 }
 
 
+@keyframes aboutimg {
+  0%{transform: translateX(-50px); opacity: 0;}
+  100%{transform: translateX(-0px); opacity: 1;}
+}
 
 
-
-
+@keyframes abouttext{
+  0%{transform: translateY(250px); opacity: 0;}
+  100%{transform: translateY(0px); opacity: 1;}
+}
 
 
 
