@@ -1,7 +1,23 @@
+const spyEls = document.querySelectorAll('section.scroll-spy');
+
+// init controller
+const controller = new ScrollMagic.Controller();
+
+spyEls.forEach(function (spyEl) {
+  // create a scene
+  new ScrollMagic.Scene({ // 감시할 장면 추가 및 옵션 지정
+    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.5 // 화면의 50% 지점에서 보여짐 여부 감시(0~1사이 지정)
+  })
+  .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
+  .addTo(controller); // 컨트롤러에 장면을 할당(필수!)
+});
+
+
 const header = document.querySelector('header');
 const abouth2 = document.querySelector('.about h2')
-
-
+const totop = document.querySelector('#toTop');
+const backimg = document.querySelector('.visual')
 
 window.addEventListener('scroll', function(){
   // console.log(this.window.scrollY); // Y축 스크롤 위치
@@ -9,12 +25,19 @@ window.addEventListener('scroll', function(){
   if(this.window.scrollY >= 500){
   header.style.display = 'flex';
   header.style.opacity = '1';
-  
+  totop.style.display = 'flex';
+  totop.style.opacity = '1';
+  backimg.classList.remove('show');
 
   }else{
   header.style.display = 'none';
   header.style.opacity = '0';
+  totop.style.display = 'none'
+  totop.style.opacity = '0';
+  backimg.classList.add('show');
   }
+
+  
 });
 
 
@@ -24,9 +47,9 @@ const swiper = new Swiper('.project .swiper', {
   // 슬라이드 옵션 지정
   direction: 'horizontal', // 수평 슬라이드
   loop: true, // 반복 재생 여부, 1 -> 2 -> 3 -> 다시 1
-  // autoplay: { // 자동 재생 여부
-  //   delay: 5000 // 5초마다 슬라이드 바뀜
-  // },
+  autoplay: { // 자동 재생 여부
+    delay: 1000 // 5초마다 슬라이드 바뀜
+  },
 
   // 페이지네이션 옵션
   pagination: {
@@ -105,13 +128,6 @@ projectimg4.addEventListener('click', function(){
   project2.classList.toggle('num2');
   project3.classList.toggle('num3');
 
-})
-
-
-const projectimg = document.querySelectorAll('.projectimg li');
-
-projectimg.forEach(function(e){
-  e.addEventListener('mousehover')
 })
 
 
