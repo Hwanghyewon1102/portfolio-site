@@ -141,3 +141,22 @@ const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
 
 
+const hamburgerBtn = document.querySelector('.btn-hamburger');
+const nevEl = document.querySelector('header nav');
+
+hamburgerBtn.addEventListener('click', function(){
+  // if(nevEl.classList.contains('active')){
+  //   nevEl.classList.remove('active');
+  // } else{
+  //   nevEl.classList.add('active');
+  // }
+  nevEl.classList.toggle('active');
+});
+
+const muneli = document.querySelectorAll('header li');
+
+muneli.forEach(function(e){
+  e.addEventListener('click', function(){
+    nevEl.classList.remove('active');
+  });
+});

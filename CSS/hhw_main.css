@@ -96,6 +96,16 @@ header .search .search-div{
   cursor: pointer;
 }
 
+header .btn-hamburger {
+  display: none;
+}
+header .btn-hamburger .material-symbols-outlined {
+  font-size: 40px;
+  /* 수직 정렬 맞추기 */
+  display: block;
+  /* line-height: 60px; */
+}
+
 /* VISUAL */
 .visual {
 
@@ -171,7 +181,7 @@ header .search .search-div{
   font-size: 60px;
   font-weight: 800;
   margin-bottom: 30px;
-  -webkit-text-stroke: 2px #0078C8;
+
 }
 
 .vitext ul {
@@ -331,6 +341,17 @@ header .search .search-div{
   text-align: center;
 
 }
+ .skillul ul {
+    padding: 20px;
+    
+  }
+
+  .skillul li {
+    line-height: 1.5;
+    font-size: 20px;
+    
+    
+  }
 
 .skill__box {
   width: 40%;
@@ -411,7 +432,7 @@ header .search .search-div{
 /* PROJECT */
 
 .project {
-  padding: 150px 0;
+  padding: 150px;
 }
 .project .port {
   display: flex;
@@ -725,28 +746,164 @@ footer .copyright{
 
 
 @media screen and (max-width: 767px) {
-.vitext .name {
-  font-size: 30px;
-  -webkit-text-stroke: #0078C8;
-  justify-content: center;
+
+  header > .inner {
+    padding: 0 20px;
+    gap: 300px;
+  }
+
+
+  header .btn-hamburger {
+    display: block;
+  }
+  header nav {
+    background-color: rgba(73, 158, 255, 0.8);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    
+  }
+  header nav.active {
+    height: 100%;
+  }
+  header nav ul {
+   
+    flex-direction: column;
+    padding-top: 60px;
+    margin: auto;
+    align-items: center;
+  }
+  header nav ul li {
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+  header nav ul li a {
+    transition: 0.5s;
+  }
+  header nav ul li a:hover {
+    letter-spacing: 10px;
+  }
+
+
+.visual .vitext {
+  top: 50% ;
+  transform:  translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  }
+.visual .name {
+    font-size: 38px;
+  }
+
+  .visual li {
+    font-size: 16px;
+  }
+
+
+  .about {
+  padding: 100px 0;
+  height: 100vh;
+}
+
+.about  .about__wrapper {
+  display: flex;
+  column-gap: 200px;
+  margin-top: 100px;
+  transition: 1s;
+  flex-direction: column;
+}
+
+.about .about__img img{
+  width: 60%;
+  height: 80%;
+  margin-left: 100px;
+  opacity: 0;
+  margin-bottom: 100px;
 
 }
 
+.about .about__text{
+  align-content: end;
+  line-height: 45px;
+  text-align: center;
+  
+}
+
+.about .about__text .slogan{
+  font-size: 40px;
+}
+.about .about__text .data{
+  font-size: 20px;
+
+}
+
+.about .about__text .career{
+  font-size: 18px;
+
+}
+.about .about__text ul{
+  font-size: 15px;
+}
+
+
+  .skill__box {
+    width: 40%;
+    height: 250px;
+    padding: 20px;
+  }
+
+  .skill__box span {
+    font-size: 24px;
+  }
+
+  .skillimg {
+    flex-direction: column; /* 가로 → 세로로 */
+    align-items: center;
+    text-align: center;
+  }
+
+  .skill__box img {
+    width: 60px;
+    margin: 20px 0;
+  }
+
+  .skillul ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skillul li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+
+
 .contact .projectimg{
-  width: 100px;
-  height: 100px;
-  opacity: 0.8;
-  border: 1px solid #0078C8;
-  r
+  right: 20px;
+}
+.contact.show .projectimg{
+  transform: translateX(0px);
+}
+
+.project {
+  padding: 150px 20px;
+}
+.projectimg img:hover{
+  opacity: 1;
 }
 
 .projectimg img{
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  
-}
+
 }
 
 
-
+}

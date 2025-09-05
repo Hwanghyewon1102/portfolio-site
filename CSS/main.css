@@ -173,7 +173,6 @@ header .btn-hamburger {
 }
 header .btn-hamburger .material-symbols-outlined {
   font-size: 40px;
-  /* 수직 정렬 맞추기 */
   display: block;
   /* line-height: 60px; */
 }
