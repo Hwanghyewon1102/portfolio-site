@@ -789,7 +789,9 @@ footer .copyright{
     letter-spacing: 10px;
   }
 
-
+.visual.show > .inner {
+  animation: moveBackground1 2s linear forwards ; 
+}
 .visual .vitext {
   top: 50% ;
   transform:  translateY(-50%);
@@ -803,6 +805,8 @@ footer .copyright{
   .visual li {
     font-size: 16px;
   }
+
+  
 
 
   .about {
@@ -904,6 +908,21 @@ footer .copyright{
   height: 50px;
 
 }
+
+
+@keyframes moveBackground1 {
+  0% {
+    background-position: 0 40%; 
+  }
+  70%{background-position: 0 90%; }
+  80%{background-position: 0 98%; }
+  100%{
+    background-position: 0 100%; 
+  }
+}
+
+
+
 
 
 }
